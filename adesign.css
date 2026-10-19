@@ -1,0 +1,54 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color:#3D2415;
+}
+.wrap { 
+    display: flex; 
+    flex-direction: column;      
+    box-sizing: border-box; 
+    justify-content: flex-start; 
+}
+
+.title img {
+    display: flex;
+    margin-left: 60px;
+    max-width: 600px; 
+    height: auto; 
+    margin-top: 6.5%;
+}
+
+.title {  
+    height: 100vh;                       
+    background-color:#3D2415; 
+    color: #fffffd;                         
+    padding: 50px 50px 40px 0;           
+    box-sizing: border-box;                   
+}
+.title .fix{
+    position: absolute;
+    text-align: right;
+    left: 60%;
+    top: 37%;
+}
+.title .fixx{
+    position: absolute;
+    text-align: right;
+    left: 75%;
+    top: 46%;
+}
+.btn {
+    position: absolute;
+    top: 65%;     
+    left: 70%;     
+    padding: 3px 55px;
+    background-color: #f9d9a5;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #3D2415;            
+    font-weight: bold;
+}
+

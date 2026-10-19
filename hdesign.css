@@ -1,0 +1,109 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color:#3D2415;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('fonts/Lora/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrap { 
+    display: flex; 
+    flex-direction: column;      
+    box-sizing: border-box; 
+    justify-content: flex-start; 
+}
+
+.title img {
+    display: flex;
+    margin-left: 60px;
+    max-width: 600px; 
+    height: auto; 
+    margin-top: 6.5%;
+}
+
+.title {  
+    height: 100vh;                       
+    background-color:#3D2415; 
+    color: #fffffd;                         
+    padding: 50px 50px 40px 0;           
+    box-sizing: border-box;  
+    font-family: 'Playfair Display';                 
+}
+.title .fix{
+    position: absolute;
+    text-align: right;
+    left: 60%;
+    top: 37%;
+}
+.title .fixx{
+    position: absolute;
+    text-align: right;
+    left: 75%;
+    top: 50%;
+}
+.btn {
+    position: absolute;
+    top: 65%;     
+    left: 70%;     
+    padding: 3px 55px;
+    font-family: 'Lora';
+    background-color: #f9d9a5;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #3D2415;            
+    font-weight: bold;
+}
+a :hover{
+    color:#0b4e05;
+}
+
+@media (max-width: 1100px) {
+    .title {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 24px 60px 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title img {
+        margin-left: 0;
+        margin-top: 20px;
+        max-width: 100%;
+        width: 100%;
+    }
+    .title .fix, .title .fixx {
+        position: static;
+        text-align: left;
+        left: auto;
+        top: auto;
+    }
+    .title .fix {
+        margin-top: 30px;
+    }
+    .title .fixx {
+        margin-top: 12px;
+    }
+    .btn {
+        position: static;
+        top: auto;
+        left: auto;
+        margin-top: 28px;
+        padding: 10px 40px;
+    }
+}

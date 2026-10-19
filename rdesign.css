@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('fonts/Lora/Lora-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+html, body { 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    min-height: 100vh;
+    padding: 48px 24px 72px;
+    background-color: #fff0c9; 
+    color: #2b1b17; 
+    font-family: 'Lora';
+    display: flex;
+    justify-content: center;
+}
+
+.page {
+    width: 100%;
+    max-width: 1120px;
+}
+
+.page-head { 
+    margin-bottom: 30px; 
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: #2b1b17;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #1c9611; 
+}
+
+.page-title {
+    margin: 0 0 6px;
+    font-family: 'Playfair Display';
+    font-size: 2.6rem; 
+    letter-spacing: 0.5px;
+}
+
+.page-sub {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.75;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+.menu {
+    position: sticky;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cell { 
+    position: relative; 
+}
+
+.trigr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dish {
+    display: block;
+    padding: 14px 20px;
+    border: 3px solid #2b1b17;
+    border-radius: 25px; 
+    background-color: #f8eee0; 
+    font-family: 'Playfair Display';
+    font-size: 1rem;
+    color: #2b1b17;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.dish:hover {
+    color: #1c9611;
+    border-color: #1c9611;
+}
+
+.trigr:checked + .dish {
+    background-color: #2b1b17;
+    color: #f8e0c0;
+    border-color: #2b1b17;
+    transform: translateX(6px);
+}
+
+.trigr:focus-visible + .dish {
+    outline: 2px dashed #1c9611;
+    outline-offset: 3px;
+}
+
+.detail {
+    min-height: 480px;
+    padding: 34px 38px;
+    border: 3px solid #2b1b17;
+    border-radius: 25px;
+    background-color: #f8e0c0;
+}
+
+.recp { 
+    display: none; 
+}
+
+@keyframes panelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: none; }
+}
+
+body:has(#d1:checked)  #p1, body:has(#d2:checked)  #p2, body:has(#d3:checked)  #p3, body:has(#d4:checked)  #p4, body:has(#d5:checked)  #p5, body:has(#d6:checked)  #p6, body:has(#d7:checked)  #p7, body:has(#d8:checked)  #p8, body:has(#d9:checked)  #p9, body:has(#d10:checked) #p10 {
+    display: block;
+    animation: panelIn 0.28s ease both;
+}
+
+.recp-title {
+    margin: 0 0 8px;
+    font-family: 'Playfair Display';
+    font-size: 1.55rem;
+}
+
+.recp-meta {
+    margin: 0 0 24px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.recp-head {
+    margin: 26px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #2b1b17;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.recp ul {
+    margin: 0;
+    padding-left: 1.15em;
+}
+
+.recp li {
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.recp p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.recp-note {
+    margin-top: 24px;
+    padding: 14px 18px;
+    border-left: 3px solid #1c9611;
+    background-color: rgba(43, 27, 23, 0.05);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+    body { 
+        padding: 28px 16px 48px; 
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .menu {
+        position: static;
+        gap: 10px;
+    }
+
+    .trigr:checked + .dish { 
+        transform: none; 
+    }
+
+    .detail {
+        min-height: 0;
+        padding: 24px 22px;
+    }
+}
